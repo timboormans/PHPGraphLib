@@ -1,0 +1,1178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PHPGraphLib PHP Graphing Library - Documentation: Function Reference</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link href="res/styles.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<div id="content">
+    <div id="full">
+        <div id="inner_page">
+
+            <div id="project_title">
+                <h1 class="project_title_header"><img src="res/php_graph_icon.gif" alt="PHP Graphing Library" width="26" height="18" style="margin: 0 4px 0 2px;">PHPGraphLib</h1>
+                <br>
+                <h2 class="project_title_header">Lightweight PHP Graphing Library</h2>
+                <br>
+            </div>
+
+            <div id="main-full">
+
+                <div class="container">
+
+                    <h2>Function Reference - PHPGraphLib <a name="reference" id="reference"></a></h2>
+
+                    <div class="function-nav">
+                        <div class="left">
+                            <ul>
+                                <li><a href="#constructor">Constructor</a></li>
+                                <li><a href="#required_functions">Required Functions</a></li>
+                                <li><a href="#axis_functions">Axis &amp; Data Functions</a></li>
+                                <li><a href="#title_functions">Title Functions</a></li>
+                                <li><a href="#bar_functions">Bar Functions</a></li>
+                                <li><a href="#grid_functions">Grid Functions</a></li>
+                                <li><a href="#graph_line_functions">Graph Line Functions</a></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li><a href="#data_point_functions">Data Point Functions</a></li>
+                                <li><a href="#data_value_functions">Data Value Functions</a></li>
+                                <li><a href="#goal_line_functions">Goal Line Functions</a></li>
+                                <li><a href="#legend_functions">Legend Functions</a></li>
+                                <li><a href="#background_functions">Background Functions</a></li>
+                                <li><a href="#supported_colors">Supported Colors</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="function-category">
+                        <h3>Constructor<a name="constructor" id="constructor"></a></h3>
+                    </div>
+
+                    <p>Below is the default form of the constructor:</p>
+
+                    <div class="function">
+                        <div class="name"><b>PHPGraphLib</b> ( int $width, int $height )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph = new PHPGraphLib(600,400);</li>
+                                <li>$graph = new PHPGraphLib(600,400);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                PHPGraphLib object constructor. $width and $height arguments are optional.
+                                Default width=400, height=300. Recommended width is at least 200 and
+                                recommended height is at least 225.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Required Functions<a name="required_functions" id="required_functions"></a></h3>
+                    </div>
+
+                    <p>The two other main, required functions are below:</p>
+
+                    <div class="function">
+                        <div class="name"><b>addData</b>( $data )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;addData(array(100,12,43,342,9));</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Adds data to the graph. The array values will be the y-axis value.
+                                If the array has keys, the keys will be the corresponding x-axis values.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>createGraph</b> ( [string $output_filename = null] )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;createGraph();</li>
+                                <li>$graph-&gt;createGraph('image.png');</li>
+                                <li>$graph-&gt;createGraph('/home/user/folder/image.png');</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>Creates and outputs the graph. <b>Must</b> be called last.</p>
+
+                            <p>If you specify the optional filename argument, PHPGraphLib will not display to the
+                                screen, but instead output the image to a PNG file on disk.</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <p>All other graph customization functions are below.</p>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3><a name="axis_functions" id="axis_functions"></a>Axis &amp; Data Functions</h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setupXAxis</b> ( int $percent, string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setupXAxis(15);</li>
+                                <li>$graph-&gt;setupXAxis(10, "blue");</li>
+                                <li>$graph-&gt;setupXAxis(20, "128,128,0");</li>
+                                <li>$graph-&gt;setupXAxis("", "purple");</li>
+                                <li>$graph-&gt;setupXAxis(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Sets the x-axis margin as a percentage of
+                                the height and the color or the x-axis.
+                            </p>
+
+                            <p>
+                                By default, the
+                                x-axis margin is 8% of the width and black. Color may be
+                                specified as one of the supported colors or as an RGB value
+                                comma separated string. You may also call the setupXAxis()
+                                function with only a false argument to hide the x-axis.
+                                You can also call it with just the first argument,
+                                or leave the percent argument as an empty string and call
+                                it with the color argument.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="function">
+                        <div class="name"><b>setupYAxis</b> ( int $percent, string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setupYAxis(15);</li>
+                                <li>$graph-&gt;setupYAxis(10, "blue");</li>
+                                <li>$graph-&gt;setupYAxis(20, "128,128,0");</li>
+                                <li>$graph-&gt;setupYAxis("", "purple");</li>
+                                <li>$graph-&gt;setupYAxis(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Sets the y-axis margin as a percentage of the height and the color or the y-axis.
+                            </p>
+
+                            <p>
+                                By default, the
+                                y-axis margin is 8% of the width and black. Color may be
+                                specified as one of the supported colors or as an RGB value
+                                comma separated string. You may also call the setupYAxis()
+                                function with only a false argument to hide the y-axis.
+                                You can also call it with just the first argument,
+                                or leave the percent argument as an empty string and call
+                                it with the color argument.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setRange</b> ( int $max, int $min )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setRange(130,80);</li>
+                                <li>$graph-&gt;setRange(100000,2000);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Sets the range of values to be displayed on the y-axis. This overrides the default automatic y-axis
+                                range and values that get shown on the graph. Examples of setRange() are shown below:
+                            </p>
+
+                            <table style="margin: 5px 0 5px 25px;" class="">
+                                <tbody>
+                                <tr>
+                                    <td style="text-align:center;">
+                                        <img src="res/graph_bar_no_range.png" alt="Graph without setRange()" width="210" height="150">
+                                    </td>
+                                    <td>
+                                        <img src="res/graph_bar_with_range.png" alt="Graph with setRange() function" width="210" height="150">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="centered" style="font-style: italic;">Default Range Handling</p></td>
+                                    <td><p class="centered" style="font-style: italic;">With setRange(130,80) function.</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <p>
+                                Note that setRange() has some limitations - The $max/$min variables are approximate.
+                                Sometimes PHPGraphLib may slightly alter these values when faced with non-rounded values.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setXValues</b> ( boolean $x_values )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setXValues(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Display values on the x-axis. Accepts either true or false arguments.
+                                Default value is true, the x-axis values are displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setYValues</b> ( boolean $y_values )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setYValues(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="right"></div>
+
+                        <div class="description">
+                            <p>
+                                Display values on the y-axis. Accepts either true or false arguments.
+                                Default value is true, the y-axis values are displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setXValuesHorizontal</b> ( boolean $horizontal )</div>
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setXValuesHorizontal(true);</li>
+                                <li>$graph-&gt;setXValuesHorizontal(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display values on the x-axis orientated horizontally. Accepts either true or false arguments.
+                                Default value is false, the y-axis values are vertically oriented.
+                            </p>
+
+                            <table style="margin: 5px 0 5px 25px;">
+                                <tbody>
+                                <tr>
+                                    <td><img src="res/example_text_horiz.png" alt="Horizontal X-Axis Values" width="300" height="103" vspace="3"></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="centered" style="font-style:italic">Horizontal X-Axis Values</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setXValuesVertical</b> ( boolean $vertical )</div>
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setXValuesVertical(true);</li>
+                                <li>$graph-&gt;setXValuesVertical(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display values on the x-axis orientated vertically. Accepts either true or
+                                false arguments. Default value is true, the y-axis values are vertically oriented.
+                            </p>
+                            <table style="margin: 5px 0 5px 25px;">
+                                <tbody>
+                                <tr>
+                                    <td><img src="res/example_text_vert.png" alt="Vertical X-Axis Values" width="294" height="104" vspace="3"></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="centered" style="font-style:italic">Vertical X-Axis Values</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setTextColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setTextColor("maroon");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the text color used to display values on the both axis. Color may be specified as one of the supported
+                                colors or as an RGB value comma separated string. Default text color is a dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setXAxisTextColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setXAxisTextColor("128,0,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the text color used to display values on just the x-axis. Color may be specified as one of the
+                                supported colors or as an RGB value comma separated string. Default color is a dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setYAxisTextColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setYAxisTextColor("silver");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the text color used to display values on just the y-Axis. Color may be specified as one of the
+                                supported colors or as an RGB value comma separated string. Default color is a dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Title Functions<a name="title_functions" id="title_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setTitle</b> ( string $title )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setTitle("Performance July 2007");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets and displays a title for the graph.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setTitleColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setTitleColor("maroon");</li>
+                                <li>$graph-&gt;setTitleColor("0,255,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the title color. Color may be specified as one of the supported colors
+                                or as an RGB value comma separated string. Default title color is black.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setTitleLocation</b> ( string $location )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setTitleColor("left");</li>
+                                <li>$graph-&gt;setTitleColor("right");</li>
+                                <li>$graph-&gt;setTitleColor("center");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the location of the title across the top of the graph. Valid values
+                                are "left", "right", "center". Default title location is the center.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Bar Functions<a name="bar_functions" id="bar_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setBars</b> ( boolean $bars )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBars(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display bars on the graph - i.e. displays a bar graph. Accepts either
+                                true or false arguments. Default value is true, the bars are displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setBarColor</b> ( string $color, [string $color2], [string $color3] )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBarColor("white");</li>
+                                <li>$graph-&gt;setBarColor("123,65,12");</li>
+                                <li>//Multiple Datasets</li>
+                                <li>$graph-&gt;setBarColor("123,65,12", "100,100,100");</li>
+                                <li>$graph-&gt;setBarColor("white", "gray", "green");</li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <p>
+                                Sets the color of the bars on the graph.
+                                Color may be specified as one of the supported colors
+                                or as an RGB value comma separated string. Default bar
+                                color is gray. PHPGraphLib will ignore this function if
+                                the setGradient() function is set.
+                            </p>
+                            <p>
+                                If using multiple datasets, you may specify up to two
+                                additional colors. If you are using multiple datasets,
+                                but have not specifed more than one color, additional
+                                colors will be specified automatically.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setBarOutline</b> ( boolean $outline )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBarOutline(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display an outline around each bar on the graph. Accepts either
+                                true or false arguments. Default value is true, the outline is displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setBarOutlineColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBarOutlineColor("navy");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the color of the outline of each bar on the graph. Color may be specified as one of the supported
+                                colors or as an RGB value comma separated string. Default bar outline color is black.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name extra-large"><b>setGradient</b> ( string $color1, string $color2, [string $color3], [string $color4], [string $color5], [string $color6] )</div>
+
+                        <div class="left large">
+                            <ul>
+                                <li>$graph-&gt;setGradient("red", "maroon");</li>
+                                <li>$graph-&gt;setGradient("200,200,200", "100,100,100");</li>
+                                <li>//Multiple Datasets</li>
+                                <li>$graph-&gt;setGradient("red", "maroon", "yellow", "olive" );</li>
+                                <li>$graph-&gt;setGradient("3,33,33", "8,100,3", "teal", "aqua", "red", "blue");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the colors for and enables the bars
+                                of the graph to be displayed as a gradient between two
+                                colors. Color arguments may be specified as one of the
+                                supported colors or as an RGB value comma separated string.
+                                By default, the gradient feature is not enabled.
+                            </p>
+                            <p>
+                                If using multiple datasets, up to two more pairs of gradient
+                                colors may be specified. If you are using multiple datasets,
+                                but have not specifed more than one gradient color, additional
+                                gradient colors will be specified automatically.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Grid Functions<a name="grid_functions" id="grid_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setGrid</b> ( boolean $grid )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setGrid(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display the grid. Accepts either true or false arguments.
+                                Default value is true, the grid is displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setGridColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setGridColor("black");</li>
+                                <li>$graph-&gt;setGridColor("0,127,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display the grid. Accepts either true or false arguments.
+                                Default value is true, the grid is displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Line Functions<a name="graph_line_functions" id="graph_line_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLine</b> ( boolean $line )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLine(true);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display the graph line. Accepts either true or false arguments.
+                                Default value is false, the graph line is not displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLineColor</b> ( string $color, [string $color2], [$string $color3] )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLineColor("navy");</li>
+                                <li>$graph-&gt;setLineColor("255,255,0");</li>
+                                <li>//Multiple datasets</li>
+                                <li>$graph-&gt;setLineColor("navy", "red","blue");</li>
+                                <li>$graph-&gt;setLineColor("230,23,100", "red");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the line color of the graph lines,
+                                if enabled, on the graph. Color may be specified as one
+                                of the supported colors or as an RGB value comma separated
+                                string. Default line color is a dark gray.
+                            </p>
+                            <p>
+                                If multiple datasets are used, you can specify up to
+                                two additional line colors. If graph bars are disabled,
+                                and there are multiple datasets, but only one line color
+                                is specified, additional line colors will be generated
+                                automatically.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Data Point Functions<a name="data_point_functions" id="data_point_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataPoints</b> ( boolean $points )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataPoints(true);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display a circular data point on the graph for each value. Accepts either
+                                true or false arguments. Default value is false, data points are not displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataPointColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBarOutlineColor("navy");</li>
+                                <li>$graph-&gt;setBarOutlineColor("255,255,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the color of the data point circle, if
+                                enabled, on the graph. Color may be specified as one of
+                                the supported colors or as an RGB value comma separated
+                                string. Default data point color is black.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataPointSize</b> ( int $size )</div>
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataPointSize(4);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the diameter of the data point circle, if enabled on the graph. Default size is 6 pixels.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Data Value Functions<a name="data_value_functions" id="data_value_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataValues</b> ( boolean $values )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataValues(true);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display each numeric data value, as passed in the data value array, on the graph.
+                                Accepts either true or false arguments. Default value is false, data values
+                                are not displayed.
+                            </p>
+
+                            <table style="margin: 5px 0 5px 25px;">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="res/example_graph_data_values.png" alt="Graph with data values" width="300" height="165">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataValueColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBarOutlineColor("navy");</li>
+                                <li>$graph-&gt;setBarOutlineColor("255,255,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the color of the data value display, if enabled, on the graph. Color may be specified as one
+                                of the supported colors or as an RGB value comma separated string. Default data value color is a dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataFormat</b> ( string $format )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataFormat("percent");</li>
+                                <li>$graph-&gt;setDataFormat("degrees");</li>
+                                <li>$graph-&gt;setDataFormat("comma");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Formats data points on both the y axis and the actual graph (if setDataPoints(true); is
+                                set). Current supported formats include "percent" which appends a % to the end of
+                                each value, "degrees" which appends a ° to the end of each value, and "comma"
+                                which groups values with commas (3,232,109). You can call as many setDataFormat()
+                                functions as you want.
+                            </p>
+                            <p>
+                                If the format argument is not in the above list of supported formats, the value
+                                specified will be appended to the end of the data value displayed. For example
+                                if you have a data value of 23 and you call $graph-&gt;setDataFormat("Apples"),
+                                the data value will be displayed as: 23 Apples.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataCurrency</b> ( string $currency )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataCurrency("euro");</li>
+                                <li>$graph-&gt;setDataCurrency("dollar");</li>
+                                <li>$graph-&gt;setDataCurrency("yen");</li>
+                                <li>$graph-&gt;setDataCurrency("pound");</li>
+                                <li>$graph-&gt;setDataCurrency("lira");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Formats data points on both the y axis and the actual graph (if setDataPoints(true); is
+                                set) by adding currency symbols in front of the data value displayed.
+                                Currently the following formats are supported:
+                            </p>
+                            <table class="data_table">
+                                <tbody>
+                                <tr>
+                                    <td>euro</td>
+                                    <td>&euro;</td>
+                                </tr>
+                                <tr>
+                                    <td>dollar</td>
+                                    <td>$</td>
+                                </tr>
+                                <tr>
+                                    <td>pound</td>
+                                    <td>&pound;</td>
+                                </tr>
+                                <tr>
+                                    <td>yen</td>
+                                    <td>&yen;</td>
+                                </tr>
+                                <tr>
+                                    <td>lira</td>
+                                    <td>&#8356;</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                If the currency argument is not in the above list, it will be appended to the front of
+                                the data value. For example if you have a data value of '2300' and you call
+                                $graph-&gt;setDataCurrency("Ase"), the data value will be displayed as: 'Ase 2300'.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Goal Line Functions<a name="goal_line_functions" id="goal_line_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setGoalLine</b> ( string $goalValue, [string $color], [string $style] )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setGoalLine(90);</li>
+                                <li>$graph-&gt;setGoalLine(.023);</li>
+                                <li>$graph-&gt;setGoalLine(.023, 'red');</li>
+                                <li>$graph-&gt;setGoalLine(.023, 'red', 'solid');</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Displays a singular horizontal grid line
+                                in addition to the regular grid lines (if present). Can
+                                be used to display a goal or y value needing emphasis.
+                                Value must be within bounds of the maximum and minimum
+                                y-axis values. The setGoalLine() function can be called
+                                multiple times to add multiple goal lines, if needed.
+                            </p>
+                            <table style="margin: 5px 0 5px 25px;">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="res/example_graph_goal_line.png" alt="Graph with goal line" width="300" height="165">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Legend Functions<a name="legend_functions" id="legend_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLegend</b> ( boolean $legend )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLegend(true);</li>
+                                <li>$graph-&gt;setLegend(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display a legend with color swatches matching
+                                the corresponding colors on the graph. Accepts either true
+                                or false arguments. Default value is false, the legend is
+                                not displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLegendTitle</b> ( string $title, [string $title2], [string $title3] )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLegendTitle("Apples");</li>
+                                <li>//Multiple Datasets</li>
+                                <li>$graph-&gt;setLegendTitle("Apples", "Pears");</li>
+                                <li>$graph-&gt;setLegendTitle("Apples", "Pears", "Oranges" )</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the title of the dataset on the legend.
+                                If using more than one dataset, specify titles in the order
+                                of datasets specified in the addData() function.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLegendColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLegendColor("red");</li>
+                                <li>$graph-&gt;setLegendColor("120,60,30");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the background color of the legend,
+                                if present. Color may be specified as one of the supported
+                                colors or as an RGB value comma separated string. Default
+                                legend background color is white.
+                            </p>
+                            <table style="margin: 5px 0 5px 25px;">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="res/graph_legend_example.png" alt="Legend Examples" width="330" height="184">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLegendTextColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLegendTextColor("olive");</li>
+                                <li>$graph-&gt;setLegendTextColor("101,45,12");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets text color in the legend. Color may be
+                                specified as one of the supported colors or as an RGB value
+                                comma separated string. Default color is dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLegendOutlineColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLegendOutlineColor("yellow");</li>
+                                <li>$graph-&gt;setLegendOutlineColor("255,255,0");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets border color of the legend. Color may
+                                be specified as one of the supported colors or as an RGB
+                                value comma separated string. Default color is light gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setSwatchOutlineColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setSwatchOutlineColor("teal");</li>
+                                <li>$graph-&gt;setSwatchOutlineColor("0,122,255");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the border color of the color swatches
+                                in the legend. Color may be specified as one of the supported
+                                colors or as an RGB value comma separated string. Default
+                                color is a dark gray.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Background Functions<a name="background_functions" id="background_functions"></a></h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setBackgroundColor</b> ( string $color )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setBackgroundColor("black");</li>
+                                <li>$graph-&gt;setBackgroundColor("0,0,255");</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the background color for the graph. Color
+                                may be specified as one of the supported colors or as an
+                                RGB value comma separated string. There is no need to enable
+                                the background by calling a boolean function - setting a
+                                color for it enables the background. Default background
+                                color is white.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        <br>
+                    </p>
+
+                    <div class="function-category">
+                        <h3>Supported Colors<a name="supported_colors" id="supported_colors"></a></h3>
+                    </div>
+
+                    <p>
+                        The following is a list of colors supported in name by PHPGraphLib.
+                        The colors are from the W3C's list of 16 W3C Standard Colors.
+                    </p>
+
+                    <table class="data_table" style="margin: 0;">
+                        <tbody>
+                        <tr>
+                            <td>Color Name</td>
+                            <td>Swatch</td>
+                            <td>RGB Value</td>
+                            <td>Color Name</td>
+                            <td>Swatch</td>
+                            <td>RGB Value</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>black</td>
+                            <td><img src="res/black.gif" alt="black" width="24" height="24"></td>
+                            <td>0,0,0</td>
+                            <td>green</td>
+                            <td><img src="res/green.gif" alt="green" width="24" height="24"></td>
+                            <td>0,128,0</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>silver</td>
+                            <td><img src="res/silver.gif" alt="silver" width="24" height="24"></td>
+                            <td>192,192,192</td>
+                            <td>lime</td>
+                            <td><img src="res/lime.gif" alt="lime" width="24" height="24"></td>
+                            <td>0,255,0</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>gray</td>
+                            <td><img src="res/gray.gif" alt="gray" width="24" height="24"></td>
+                            <td>128,128,128</td>
+                            <td>olive</td>
+                            <td><img src="res/olive.gif" alt="olive" width="24" height="24"></td>
+                            <td>128,128,0</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>white</td>
+                            <td><img src="res/white.gif" alt="white" width="24" height="24"></td>
+                            <td>255,255,255</td>
+                            <td>yellow</td>
+                            <td><img src="res/yellow.gif" alt="yellow" width="24" height="24"></td>
+                            <td>255,255,0</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>maroon</td>
+                            <td><img src="res/maroon.gif" alt="maroon" width="24" height="24"></td>
+                            <td>128,0,0</td>
+                            <td>navy</td>
+                            <td><img src="res/navy.gif" alt="navy" width="24" height="24"></td>
+                            <td>0,0,128</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>red</td>
+                            <td><img src="res/red.gif" alt="red" width="24" height="24"></td>
+                            <td>255,0,0</td>
+                            <td>blue</td>
+                            <td><img src="res/blue.gif" alt="blue" width="24" height="24"></td>
+                            <td>0,0,255</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>purple</td>
+                            <td><img src="res/purple.gif" alt="purple" width="24" height="24"></td>
+                            <td>128,0,128</td>
+                            <td>teal</td>
+                            <td><img src="res/teal.gif" alt="teal" width="24" height="24"></td>
+                            <td>0,128,128</td>
+                        </tr>
+                        <tr class="table_top">
+                            <td>fuscia</td>
+                            <td><img src="res/fuchsia.gif" alt="fuscia" width="24" height="24"></td>
+                            <td>255,0,255</td>
+                            <td>aqua</td>
+                            <td><img src="res/aqua.gif" alt="aqua" width="24" height="24"></td>
+                            <td>0,255,255</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

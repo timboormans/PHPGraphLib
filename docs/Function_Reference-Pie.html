@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PHPGraphLib PHP Graphing Library - Documentation: PHPGraphLibPie Reference</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link href="res/styles.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<div id="content">
+    <div id="full">
+        <div id="inner_page">
+
+            <div id="project_title">
+                <h1 class="project_title_header"><img src="res/php_graph_icon.gif" alt="PHP Graphing Library" width="26" height="18" style="margin: 0 4px 0 2px;">PHPGraphLib</h1>
+                <br>
+                <h2 class="project_title_header">Lightweight PHP Graphing Library</h2>
+                <br>
+            </div>
+
+            <div id="main-full">
+
+                <div class="container">
+
+                    <h2>Function Reference - PHPGraphLibPie<a name="reference" id="reference"></a></h2>
+
+                    <p>
+                        PHPGraphLibPie is an extension of the original PHPGraphLib that allows you to make pie charts using
+                        the existing PHPGraphLib framework. For an example of setup and usage, see the examples folder.
+                    </p>
+
+                    <p>
+                        PHPGraphLibPie inherits many of the same functions as PHPGraphLib. There is a list of
+                        inherited functions at the bottom of this page.
+                    </p>
+
+                    <h3>Anatomy of a PHPGraphLibPie Chart</h3>
+
+                    <img src="res/example_pie_graph_anatomy.png" alt="Anatomy of a PHPGraphLibPie Chart" width="480" height="194">
+
+                    <p>Below is the default form of the constructor:</p>
+
+                    <div class="function-category">
+                        <h3>Constructor</h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>PHPGraphLibPie</b>( int $width, int $height )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph = new PHPGraphLibPie(600,400);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                PHPGraphLibPie object constructor. $width and $height arguments are optional.
+                                Default width=400, height=300.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="function-category">
+                        <h3>PHPGraphLibPie Specific Functions</h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setDataLabels</b>( boolean $labels )</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setDataLabels(false);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Display % data labels by each section of the pie/ Accepts either true or false arguments.
+                                Default value is true, data labels are displayed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setPrecision</b>( int $digits )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setPrecision(2);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the number of significant digits to be displayed on the graph if the setDataLabels() function is true.
+                                Default is 0 significant digits, meaning that the data labels are whole numbers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>setLabelTextColor</b>( string $title )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph-&gt;setLabelTextColor(&quot;maroon&quot;);</li>
+                                <li>$graph-&gt;setLabelTextColor(&quot;0,0,200&quot;);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                Sets the text color of the display % labels on the pie chart. Color may be specified as one of the supported
+                                colors or as an RGB value comma separated string. Default color is a black.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        PHPGraphLibPie also inherits some functions from the PHPGraphLib class. These functions are:
+                    </p>
+
+                    <ul>
+                        <li>addData()</li>
+                        <li>createGraph()</li>
+                        <li>setBackgroundColor()</li>
+                        <li>setLegend()</li>
+                        <li>setLegendColor()</li>
+                        <li>setLegendTextColor()</li>
+                        <li>setLegendOutlineColor()</li>
+                        <li>setSwatchOutlineColor()</li>
+                        <li>setTitle()</li>
+                        <li>setTitleColor()</li>
+                    </ul>
+
+                    <p>
+                        For usage, please refer to the main <a href="Function_Reference.html">PHPGraphLib Function Reference</a>.
+                    </p>
+
+                    <h3>Supported Colors</h3>
+
+                    <p>
+                        In addition to supporting all the colors built into PHPGraphLib, PHPGraphLibPie also supports the following colors in name:
+                    </p>
+
+                    <ul>
+                        <li>brown</li>
+                        <li>clay</li>
+                        <li>pastel_blue_1</li>
+                        <li>pastel_blue_2</li>
+                        <li>pastel_green_1</li>
+                        <li>pastel_green_2</li>
+                        <li>pastel_orange_1</li>
+                        <li>pastel_orange_2</li>
+                        <li>pastel_purple</li>
+                        <li>pastel_yellow</li>
+                    </ul>
+
+                    <p>
+                        The colors used in the pie slices are automatically drawn from a list that includes these colors.
+                        Lighter pastel colors, are easier on the eyes when used in a pie chart situation.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

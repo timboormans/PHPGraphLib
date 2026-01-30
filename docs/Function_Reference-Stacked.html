@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PHPGraphLib PHP Graphing Library - Documentation: PHPGraphLibStacked Reference</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link href="res/styles.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<div id="content">
+    <div id="full">
+        <div id="inner_page">
+
+            <div id="project_title">
+                <h1 class="project_title_header"><img src="res/php_graph_icon.gif" alt="PHP Graphing Library" width="26" height="18" style="margin: 0 4px 0 2px;">PHPGraphLib</h1>
+                <br>
+                <h2 class="project_title_header">Lightweight PHP Graphing Library</h2>
+                <br>
+            </div>
+
+            <div id="main-full">
+
+                <div class="container">
+
+                    <h2>Function Reference - PHPGraphLibStacked<a name="reference" id="reference"></a></h2>
+
+                    <p>
+                        PHPGraphLibStacked is an extension of the original PHPGraphLib
+                        that allows you to make stacked bar chars using the existing PHPGraphLib
+                        framework.
+                    </p>
+
+                    <p style="text-align:center;">
+                        <img src="res/stacked-graph-example.png" alt="Stacked chart">
+                    </p>
+
+                    <p>Below is the default form of the constructor:</p>
+
+                    <div class="function-category">
+                        <h3>Constructor</h3>
+                    </div>
+
+                    <div class="function">
+                        <div class="name"><b>PHPGraphLibStacked</b>( int $width, int $height )</div>
+
+                        <div class="required">required</div>
+
+                        <div class="left">
+                            <ul>
+                                <li>$graph = new PHPGraphLibStacked(600,400);</li>
+                            </ul>
+                        </div>
+
+                        <div class="description">
+                            <p>
+                                PHPGraphLibStacked object constructor. $width and $height arguments are optional. Default width=400, height=300.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>As with PHPGraphLib, addData() and createGraph() are also required functions.</p>
+
+                    <br>
+                    <div class="function-category">
+                        <h3>PHPGraphLibStacked Functions</h3>
+                    </div>
+
+                    <p>PHPGraphLibStacked inherits most of the same functions as PHPGraphLib, so you can reference the regular
+                        <a href="Function_Reference.html">PHPGraphLib Function Reference</a> when building a PHPGraphLibStacked graph.
+
+                        A few functions are not usable with PHPGraphLibStacked. Most notably you cannot make a line graph or display
+                        data points. Below is a list of functions not usable with PHPGraphLibStacked.</p>
+
+                    <div class="function-category">
+                        <h3>PHPGraphLibStacked <span style="color:red">Disabled Functions</span></h3>
+                    </div>
+
+                    <ul>
+                        <li>setLine()</li>
+                        <li>setDataPointSize()</li>
+                        <li>setDataPoints()</li>
+                        <li>setDataValues()</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

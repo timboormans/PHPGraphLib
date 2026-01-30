@@ -1,0 +1,44 @@
+
+PHPGraphLib Graphing Library
+
+The first version PHPGraphLib was written in 2007 by Elliott Brueggeman to
+deliver PHP generated graphs quickly and easily. It has grown in both features
+and maturity since its inception, but remains PHP 4.04+ compatible. Originally
+available only for paid commercial use, PHPGraphLib was open-sourced in 2013
+under the MIT License. Please visit http://www.ebrueggeman.com/phpgraphlib 
+for more information.
+
+In 2016 the library has had an overhaul by https://github.com/jeroenst/phpgraphlib
+
+In 2026 the library is bugfixed by Tim Boormans and partly rewritten to be able
+to run under PHP 8 in more restricted environments. Also changed the way in which
+the output is handled, giving more control to the developer. Re-released under the
+MIT License under which the library originally also was released.
+
+The added 'docs' folder is scraped from internet history and heavily redacted afterwards.
+The copyright of those parts belong to their respective owners - thus not under the
+MIT license.
+
+---
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Elliott Brueggeman
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
